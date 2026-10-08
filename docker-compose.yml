@@ -1,0 +1,12 @@
+services:
+  food-surplus-app:
+    build: .
+    image: kukurekin-danil-devops
+    container_name: kukurekin-danil-container
+    ports:
+      - "8000:8000"
+    environment:
+      STUDENT_NAME: Danil
+      STUDENT_SURNAME: Kukurekin
+      STUDENT_GROUP: IT2-2312
+      STUDENT_ID: "37554"
