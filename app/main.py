@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+from contextlib import asynccontextmanager
 from threading import Lock
 from uuid import uuid4
 
@@ -67,7 +68,24 @@ def reset_catalog() -> None:
 
 
 reset_catalog()
-app = FastAPI(title="Food Surplus Platform", version="1.0.0")
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    """Print the required personal information when the container starts."""
+    student = student_from_environment()
+    print("=" * 32, flush=True)
+    print("DevOps Student Application", flush=True)
+    print("=" * 32, flush=True)
+    print(f"Name: {student.name}", flush=True)
+    print(f"Surname: {student.surname}", flush=True)
+    print(f"Group: {student.group}", flush=True)
+    print(f"Student ID: {student.student_id}", flush=True)
+    print("Application is running successfully!", flush=True)
+    yield
+
+
+app = FastAPI(title="Food Surplus Platform", version="1.0.0", lifespan=lifespan)
 
 
 @app.get("/")

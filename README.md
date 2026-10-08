@@ -66,6 +66,15 @@ git config --local user.email "danil.kukurekin@bk.ru"
 git config --local --get user.email
 ```
 
+After signing in to the personal GitHub account with a verified `danil.kukurekin@bk.ru` email, publish safely with:
+
+```bash
+chmod +x scripts/publish_to_github.sh
+./scripts/publish_to_github.sh
+```
+
+The script checks the GitHub account's verified email before it creates a public repository, adds `origin`, or pushes commits. It deliberately stops on an account mismatch.
+
 Demonstrate `.gitignore` after generating the log:
 
 ```bash
