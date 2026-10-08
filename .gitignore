@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local runtime files required by the laboratory task
+*.log
+backup/
+.env
+
+# Test and tooling output
+.pytest_cache/
+coverage.xml
