@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    // A manually started build must finish before the next one begins.
+    // This avoids two Docker builds competing for the same local daemon.
+    options {
+        disableConcurrentBuilds()
+    }
+
     environment {
         PATH = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin'
         DOCKER_HOST = 'unix:///Users/dokkka/.docker/run/docker.sock'
