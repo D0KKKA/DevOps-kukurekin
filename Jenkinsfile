@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     environment {
+        PATH = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin'
+        DOCKER_HOST = 'unix:///Users/dokkka/.docker/run/docker.sock'
         STUDENT_NAME = 'Danil'
         STUDENT_SURNAME = 'Kukurekin'
         STUDENT_GROUP = 'IT2-2312'
