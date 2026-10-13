@@ -54,7 +54,7 @@ pip install -r requirements-dev.txt
 uvicorn app.main:app --reload
 ```
 
-Open `http://localhost:8000/docs` to try the API. `GET /` displays the required student information; `POST /offers/{offer_id}/reserve` returns `409 Conflict` when a request would exceed the available quantity.
+Open `http://localhost:8010/docs` after a Docker run, or `http://localhost:8000/docs` when running Uvicorn directly. `GET /` displays the required student information; `POST /offers/{offer_id}/reserve` returns `409 Conflict` when a request would exceed the available quantity.
 
 ## Git workflow
 
@@ -97,7 +97,7 @@ git log --oneline --graph --all
 
 ```bash
 docker build -t kukurekin-danil-devops .
-docker run --name kukurekin-danil-container -p 8000:8000 \
+docker run --name kukurekin-danil-container -p 8010:8000 \
   -e STUDENT_NAME=Danil \
   -e STUDENT_SURNAME=Kukurekin \
   -e STUDENT_GROUP=IT2-2312 \

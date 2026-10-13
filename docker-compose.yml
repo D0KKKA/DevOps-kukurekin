@@ -4,7 +4,7 @@ services:
     image: kukurekin-danil-devops
     container_name: kukurekin-danil-container
     ports:
-      - "8000:8000"
+      - "8010:8000"
     environment:
       STUDENT_NAME: Danil
       STUDENT_SURNAME: Kukurekin

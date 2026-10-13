@@ -37,7 +37,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 sh 'docker rm -f $CONTAINER_NAME || true'
-                sh '''docker run -d --name $CONTAINER_NAME -p 8000:8000 \\
+                sh '''docker run -d --name $CONTAINER_NAME -p 8010:8000 \\
                     -e STUDENT_NAME=$STUDENT_NAME \\
                     -e STUDENT_SURNAME=$STUDENT_SURNAME \\
                     -e STUDENT_GROUP=$STUDENT_GROUP \\
