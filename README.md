@@ -86,8 +86,8 @@ Create and merge the required branch:
 
 ```bash
 git switch -c development
-echo "Development branch update" >> docs/development-note.md
-git add docs/development-note.md && git commit -m "Document development branch workflow"
+echo "Development branch update" >> config/app.conf
+git add config/app.conf && git commit -m "Update application configuration"
 git switch main
 git merge development
 git log --oneline --graph --all
@@ -124,8 +124,6 @@ Create a Pipeline job named **Kukurekin_Danil_DevOps** and set its Pipeline Defi
 ## Submission checklist
 
 - Public/access-granted GitHub repository: `https://github.com/<your-personal-account>/kukurekin-danil-devops`
-- PDF report in `report/` with screenshots taken from your actual computer
+- PDF report prepared separately with screenshots taken from your actual computer
 - One continuous 10-20 minute video: screen + your voice, starting with your name, group and Student ID
 - Jenkins console showing `Finished: SUCCESS`, the commit hash, image and running container
-
-See `docs/video-demo-plan.md` and `report/report-content.md` for the exact recording/report sequence.
